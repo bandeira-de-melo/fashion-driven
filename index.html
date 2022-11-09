@@ -24,7 +24,7 @@
                                 <div class="items-container">
                                   
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectShirtModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -32,7 +32,7 @@
             
                                     
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectShirtModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -40,7 +40,7 @@
             
                 
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectShirtModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -54,7 +54,7 @@
                                 <div class="items-container">
                                 
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectNecklineModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -62,7 +62,7 @@
             
                                     
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectNecklineModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -70,7 +70,7 @@
             
                 
                                     <div class="item-info">
-                                        <div class="image-circle">
+                                        <div class="image-circle" onclick="selectNecklineModel(this); allDone()">
                                             <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
@@ -83,25 +83,25 @@
                                 <h3 class="section-title">Escolha o tecido</h3>
                                 <div class="items-container">
                                
-                                    <div class="item-info">
-                                        <div class="image-circle">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="item-info" >
+                                    <div class="image-circle" onclick="selectFabricModel(this); allDone()">
+                                        <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                                     
-                                    <div class="item-info">
-                                        <div class="image-circle">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="item-info" >
+                                    <div class="image-circle" onclick="selectFabricModel(this); allDone()">
+                                        <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                 
-                                    <div class="item-info">
-                                        <div class="image-circle">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="item-info" >
+                                    <div class="image-circle" onclick="selectFabricModel(this); allDone()">
+                                        <img src="/images/tshirt.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
@@ -112,8 +112,8 @@
                         </div>
                         <div class="order-container">
                             <h3>Imagem de referência</h3>
-                            <input type="url" name="" id="" placeholder="Insira o link">
-                            <button>Confirmar pedido</button>
+                            <input class="urlInput" type="url" name="" id="" placeholder="Insira o link" required>
+                            <button class="btn">Confirmar pedido</button>
                         </div>
                     </div>
                 </div>
@@ -144,5 +144,6 @@
             </footer>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
