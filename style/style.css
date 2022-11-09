@@ -144,7 +144,7 @@ footer {
     padding: 12px 15.7px;
 }
 
-.order-container > button {
+button {
     height: 40px;
     border-radius: 10px;
     background-color: #C4C4C4;
@@ -183,4 +183,8 @@ footer > h2 {
 
 .selected-shirt, .selected-neckline, .selected-fabric {
     border: 3px solid #404EED;
+}
+
+.blue {
+    background-color: #404EED;
 }
