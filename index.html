@@ -24,24 +24,24 @@
                                 <div class="items-container">
                                   
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectShirtModel(this); ">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectShirtModel(this); " id="t-shirt">
+                                            <img src="/images/tshirt.png" alt="" class="item-img" >
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                                     
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectShirtModel(this)">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectShirtModel(this)" id="top-tank">
+                                            <img src="/images/Camiseta.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                 
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectShirtModel(this)">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectShirtModel(this)" id="long">
+                                            <img src="/images/Mangalonga.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
@@ -54,24 +54,24 @@
                                 <div class="items-container">
                                 
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectNecklineModel(this)">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectNecklineModel(this)" id="v-neck">
+                                            <img src="/images/GolaV.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                                     
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectNecklineModel(this)">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectNecklineModel(this)" id="round">
+                                            <img src="/images/GolaRedonda.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                 
                                     <div class="item-info">
-                                        <div class="image-circle" onclick="selectNecklineModel(this)">
-                                            <img src="/images/tshirt.png" alt="" class="item-img">
+                                        <div class="image-circle" onclick="selectNecklineModel(this)" id="polo">
+                                            <img src="/images/GolaPolo.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
@@ -84,24 +84,24 @@
                                 <div class="items-container">
                                
                                     <div class="item-info" >
-                                    <div class="image-circle" onclick="selectFabricModel(this)">
-                                        <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="image-circle" onclick="selectFabricModel(this)" id="silk">
+                                        <img src="/images/Seda.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                                     
                                     <div class="item-info" >
-                                    <div class="image-circle" onclick="selectFabricModel(this)">
-                                        <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="image-circle" onclick="selectFabricModel(this)" id="cotton">
+                                        <img src="/images/Algodão.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
             
                 
                                     <div class="item-info" >
-                                    <div class="image-circle" onclick="selectFabricModel(this)">
-                                        <img src="/images/tshirt.png" alt="" class="item-img">
+                                    <div class="image-circle" onclick="selectFabricModel(this)" id="polyester">
+                                        <img src="/images/Poliester.png" alt="" class="item-img">
                                         </div>
                                         <p class="item-description">T-shirt</p>
                                     </div>
@@ -112,8 +112,8 @@
                         </div>
                         <div class="order-container">
                             <h3>Imagem de referência</h3>
-                            <input class="urlInput" type="url" name="" id="" placeholder="Insira o link" required>
-                            <button class="btn">Confirmar pedido</button>
+                            <input type="text" class="urlInput" placeholder="Insira o link" oninput="getUrl(this.value)">
+                            <button class="btn" onclick="post()">Confirmar pedido</button>
                         </div>
                     </div>
                 </div>
@@ -144,6 +144,7 @@
             </footer>
         </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
