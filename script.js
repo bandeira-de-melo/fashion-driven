@@ -1,13 +1,13 @@
 let creator = prompt("Oi! Qual o seu nome?")
 while (creator === ""){
     creator = prompt("Oi! Qual o seu nome?")
-    console.log("lol")
 }
+
+//Global variables
 let button = document.querySelector("button")
+const latestItemsContainer = document.querySelector(".latest-items-container")
 let shirtModel, necklineModel ,fabricType = 0
-let fabric = ""
-let tShirt = ""
-let imageUrl = ""
+let fabric, tShirt , imageUrl = ""
 let contador = 0
 let requiredSelection = false
 let tShirtInfo = {
@@ -19,8 +19,52 @@ let tShirtInfo = {
     "author": creator
 }
 
-let validUrl = ""
+//Request functions
+const get = ()=>{
+    axios.get("https://mock-api.driven.com.br/api/v4/shirts-api/shirts")
+    .then(response => {
+        latestItemsContainer.innerHTML = ""
+        let allTshirts = response.data
+        let tenLastTshirts = allTshirts.slice(-10)
+        
+        tenLastTshirts.map(item => {
+            latestItemsContainer.innerHTML += `
+            <div class="latest-item-box" onclick="confirmation(this)">
+            <div class="item hide">${item.model}</div>
+            <div class="item hide">${item.neck}</div>
+            <div class="item hide">${item.material}</div> 
+            <div class="item hide">${item.image}</div>
+            <div class="item hide">${item.owner}</div>
+                <div class="image-latest-item-container">
+                    <img src="/images/Blusa1.png" alt="" class="image-latest-item">
+                    <img src="${item.image}" alt="" class="image-latest-item-print">
+                </div>
+                <strong>Criador: <span class="item-creator">${item.owner}</span></strong>
+            </div>
+            `
+            })
+        })
+        .catch(error =>{
+        console.log(error.response.status)
+        })
+    }
 
+get()
+
+const post = () => {
+    axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts", tShirtInfo)
+    .then((response)=>{
+        console.log(response.status)
+        get()
+        alert("Sua encomenda foi confirmada!")
+    })
+    .catch(error =>{
+        console.log(error.response.status)
+        alert("Ops, não conseguimos processar sua encomenda")
+    })
+}
+
+//End Request functions
 
 
 function contar(a, b, c){
@@ -45,6 +89,7 @@ function getUrl(url){
     }
 }
 
+// Selection Functions
 function selectShirtModel(element) {
     const prevSelectedShirtItem = document.querySelector('.selected-shirt')
     if (prevSelectedShirtItem !== null) {
@@ -87,37 +132,36 @@ function selectFabricModel(element) {
     
 }
 
+//End Selection Functions
+
  function allDone(){
     if(requiredSelection === true && tShirtInfo.image.length > 8){
-    console.log("olarrr")
     button.classList.add("blue")
     }
     
 } 
 
-const post = () => {
-    axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts", tShirtInfo)
-    .then((response)=>{
-        console.log(response.status)
-        alert("Sua encomenda foi confirmada!")
-    })
-    .catch(error =>{
-        console.log(error.response.status)
-        alert("Ops, não conseguimos processar sua encomenda")
-    })
+
+let confirmation = (element) => {
+let itemData = element.children
+
+ let confirmMessage = `
+    model: ${itemData[0].innerHTML}\n
+    neck: "${itemData[1].innerHTML}"\n
+    material : ${itemData[2].innerHTML}\n
+    image : ${itemData[3].innerHTML}\n
+    owner : ${itemData[4].innerHTML}
+   `
+   let yes = confirm("Confirmar pedido")
+   if(yes){
+    alert(confirmMessage)
+    location.reload()
+   } else {
+    location.reload()
+   }
+
+    
 }
 
 
 
-/* function checkUrl(url) {
-    
-    try {
-     let endereco = new URL(url)
-     const button = document.querySelector("button")
-     button.classList.add("blue")
-     button.disabled = false
-   } catch(err) {
-       alert("url de imagem invalida")
-       button.disabled = true
-   }
- } */

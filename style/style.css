@@ -29,6 +29,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 0 118px;
+    padding-top: 30px;
+    
     
 }       
 
@@ -87,10 +89,12 @@ footer {
     background-color: var(--main-color);
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 0 30px;
 }
 
 .image-container > img{
-    width: 604px;
+    width: 100%;
     display: flex;
     
 }
@@ -160,8 +164,11 @@ footer > h2 {
 
 .latest-items-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    gap: 16px;
 }
 
 .latest-item-box {
@@ -174,11 +181,23 @@ footer > h2 {
     background-color: #fff;
     border-radius: 10px;
 }
-
+.image-latest-item-container{
+    position: relative;
+}
 .image-latest-item {
     width: 180px;
     height: 180px;
     margin-bottom: 7px;
+}
+
+.image-latest-item-print{
+    position: absolute;
+    z-index: 1;
+    width: 65px;
+    height: 65px;
+    overflow-y: hidden;
+    left: 32%;
+    top: 25%;
 }
 
 .selected-shirt, .selected-neckline, .selected-fabric {
@@ -187,4 +206,16 @@ footer > h2 {
 
 .blue {
     background-color: #404EED;
+}
+
+.hide {
+    display: none;
+}
+
+.smaller-images {
+    width: 60px;
+}
+
+.mid-images {
+    height: 55px;
 }
